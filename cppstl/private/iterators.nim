@@ -13,8 +13,8 @@ proc `-`*[I: SomeCppIterator](it: I, offset: int): I {.importcpp: "# - #"}
 proc inc*(it: SomeCppIterator) {.importcpp: "(void)(++#)".}
 proc inc*(it: SomeCppIterator, offset: int) {.importcpp: "(void)(# += #)".}
 
-proc `==`*[ValueType](it, otherIt: CppIterator[ValueType]): bool {.importcpp: "# == #".}
-proc `==`*[ValueType](it, otherIt: CppConstIterator[ValueType]): bool {.importcpp: "# == #".}
+proc `==`*[ValueType](it, otherIt: CppIterator[ValueType]): bool {.importcpp: "(# == #)".}
+proc `==`*[ValueType](it, otherIt: CppConstIterator[ValueType]): bool {.importcpp: "(# == #)".}
 
 proc `[]`*[ValueType](it: CppIterator[ValueType]): var ValueType {.importcpp: "*#".}
 proc `[]`*[ValueType](it: CppConstIterator[ValueType]): ValueType {.importcpp: "*#".}
